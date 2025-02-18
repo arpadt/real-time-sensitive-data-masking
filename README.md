@@ -1,14 +1,9 @@
-# Welcome to your CDK TypeScript project
+# Real-time sensitive data masking workflow
 
-This is a blank project for CDK development with TypeScript.
+This small repo contains the infrastructure written in **CDK TypeScript** as well as the application code (also written in TypeScript).
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Architecture
 
-## Useful commands
+The stack contains all resources displayed in the diagram:
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+![Workflow](images/real-time-data-masking.svg)
