@@ -94,7 +94,9 @@ export class MacieStack extends cdk.Stack {
           'macie2:CreateClassificationJob',
           'macie2:ListClassificationJobs',
         ],
-        resources: ['arn:aws:macie2:*:*:classification-job/*'],
+        resources: [
+          `arn:aws:macie2:${props?.env?.region}:${props?.env?.account}:classification-job/*`,
+        ],
       })
     );
 
@@ -102,7 +104,7 @@ export class MacieStack extends cdk.Stack {
     createMacieJobFn.addEventSource(
       new lambdaEventSources.SqsEventSource(eventDestinationQueue, {
         batchSize: 10,
-        maxBatchingWindow: cdk.Duration.seconds(3),
+        maxBatchingWindow: cdk.Duration.seconds(5),
       })
     );
 
